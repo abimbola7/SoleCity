@@ -1,0 +1,36 @@
+.hamburger{
+    position: relative;
+    width: 24px;
+    height: 24px;
+    /* border: 1px solid white; */
+}
+
+.hamburgertop,
+.hamburgerbottom{
+    position: absolute;
+    z-index: 1000;
+    top: 2px;
+    left: 0px;
+    width: 22px;
+    height: 2px;
+    background: #fff;
+    transition: all .5s;
+}
+
+.hamburgertop{
+    transform: translateY(7px);
+}
+
+.hamburgerbottom{
+    transform: translateY(18px);
+}
+
+
+.hamburgertop.open{
+    transform: rotate(-45deg) translateY(10px) translateX(-10px);
+}
+
+.hamburgerbottom.open{
+    transform: rotate(45deg) translateY(10px) translateX(10px);
+}
+

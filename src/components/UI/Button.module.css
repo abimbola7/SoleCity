@@ -1,0 +1,57 @@
+/* .cutout{
+    -webkit-clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 25%, 75% 0);
+    clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 25%, 75% 0);
+    clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 25%, 75% 0);
+    background: lightblue;
+    padding: 10px;
+} */
+
+
+.cutout{
+    position: relative;
+    border-left: 2px solid #F9BA15;
+    overflow: hidden;
+}
+
+.cutout::after,.cutout::before {
+    position: absolute;
+    content : "";
+    width: calc(100%);
+    left: 0px;
+    z-index: -1;
+}
+
+
+.cutout::before{
+    height: 20%;
+    top: 0px;
+    border: 2px solid beige;
+    border-color: #F9BA15;
+    border-width: 2px 3px 0px 0px;
+    transform: skew(45deg);
+    transform-origin: right bottom;
+}
+
+.cutout::after {
+    /* width: ; */
+    height: calc(80% - 0px);
+    bottom: 0px;
+    border-color: #F9BA15;
+    border-width: 0px 2.35px 2px 0px;
+}
+
+.filled::before, .filled::after{
+    background-color: beige;
+}
+
+.cutout{
+    float:left;
+    color: beige;
+    /* padding: 10px; */
+    transition: all 1s;
+}
+
+
+.cutout.filled{
+    color: black;
+}

@@ -1,0 +1,17 @@
+.cutout{
+    width: 200px;
+    min-height: 200px;
+    /* -webkit-clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 25%, 75% 0); */
+    /* clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 25%, 75% 0); */
+    clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 25%, 75% 0);
+    background: lightblue;
+    padding: 10px;
+}
+
+.img {
+  transform: scaleX(-1) rotate(30deg);
+}
+
+.herocard{
+  width: 27rem;
+}
