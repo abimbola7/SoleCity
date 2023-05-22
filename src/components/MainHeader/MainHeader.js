@@ -1,5 +1,6 @@
 import React, { Fragment } from "react";
 import ReactDOM from "react-dom"
+import { NavLink, Link } from "react-router-dom";
 import shoesIcon from "../../images/shoes-19 (1).svg";
 import SearchBar from "../SearchBar/SearchBar";
 import CartIcon from "../Cart/CartIcon";
@@ -24,7 +25,8 @@ const SideBar = (props) => {
                 {[
                     ['NEW'],['SHOP'],['CART'],['SHIPPING'],['ACCOUNT'],['ABOUT US']
                 ].map(([title])=>(
-                    <div className="px-12 py-4 text-lg">{title}</div>
+                    <Link 
+                    className="px-12 py-4 text-lg">{title}</Link>
                 ))}
                 {/* <div className="px-10 py-3 border">{title}</div> */}
             </div>
@@ -105,7 +107,9 @@ const MainHeader = () => {
                     </div>
                     <div className="relative hidden lg:block text-[#F9BA15]">
                         <ul className="flex items-center space-x-6 text-2xl font-semibold">
-                            <li>HOME</li>
+                            <Link
+                            to="/home"
+                            >HOME</Link>
                             <li
                             className="relative cursor-pointer"
                             >

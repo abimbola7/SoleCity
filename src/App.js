@@ -10,6 +10,8 @@ import Hero from './components/Hero/Hero';
 import Header from './Header/Header';
 import { fetchShoeData } from './store/shoe-slice';
 import { useSelector, useDispatch } from 'react-redux';
+import NotFound from './pages/NotFound';
+import ShoeItem from './pages/ShoeItem';
 
 
 
@@ -39,10 +41,6 @@ function App() {
       <Header/>
       <Routes>
         <Route
-        path='/'
-        element={ <Navigate replace to="/home" /> }
-        />
-        <Route
         path='/home'
         element={
           <main>
@@ -50,6 +48,22 @@ function App() {
             <Shoes/>  
           </main>
         }
+        />
+        <Route
+        path='/'
+        element={ <Navigate replace to="/home" /> }
+        />
+        <Route
+        path='*'
+        element={<NotFound/>}
+        />
+        <Route
+        path='/shoes'
+        element={<Shoes/>}
+        />
+        <Route
+        path='/shoes/:quoteId/'
+        element={<ShoeItem/>}
         />
       </Routes>
     </Fragment>

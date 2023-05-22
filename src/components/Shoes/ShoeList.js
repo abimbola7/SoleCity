@@ -1,5 +1,6 @@
 import React, { Fragment } from "react";
 import Heart from "../UI/Heart";
+import { Link } from "react-router-dom";
 import CartIcon from "../UI/CartIcon";
 import CartButton from "../UI/CartButton/CartButton";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -53,7 +54,9 @@ const ShoeList = (props) => {
                     cart={cart}
                     />
                 </div>
-                <div className="flex flex-col space-y-2">
+                <Link 
+                to={`/shoes/${id}`}
+                className="flex flex-col space-y-2">
                     <div className="overflow-hidden cursor-pointer">
                         <img 
                         src={image}
@@ -76,7 +79,7 @@ const ShoeList = (props) => {
                     >
                         Add To Cart
                     </CartButton>
-                </div>
+                </Link>
             </div>
         </Fragment>
     )

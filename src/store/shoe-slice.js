@@ -29,7 +29,7 @@ const shoeSlice = createSlice({
 export const fetchShoeData = () => {
         return async (dispatch) => {
             const fetchData = async () => {
-                dispatch(apiActions.showNotification(false))
+                dispatch(apiActions.showNotification(false));
                 const response = await fetch('https://solecity-8f055-default-rtdb.firebaseio.com/shoes.json')
                 if (!response.ok) {
                     throw new Error("failed to fetch data")
@@ -43,6 +43,29 @@ export const fetchShoeData = () => {
                 const shoeData = await fetchData();
                 dispatch(apiActions.showNotification(true))
                 dispatch(shoeAction.replace(shoeData || []))
+            } catch(error){
+                console.log(error.message);
+                dispatch(apiActions.error(true))
+            }
+        }
+}
+export const fetchShoeItem = (quoteId) => {
+        return async (dispatch) => {
+            const fetchData = async () => {
+                dispatch(apiActions.showNotification(false));
+                const response = await fetch(`https://solecity-8f055-default-rtdb.firebaseio.com/shoes/${quoteId}.json`)
+                if (!response.ok) {
+                    throw new Error("failed to fetch data")
+                } else {
+                    const data = await response.json();
+                    console.log(data)
+                    return data;
+                }
+            }
+            try{
+                const shoeData = await fetchData();
+                dispatch(apiActions.showNotification(true))
+                console.log(shoeData);
             } catch(error){
                 console.log(error.message);
                 dispatch(apiActions.error(true))
