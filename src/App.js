@@ -3,11 +3,10 @@ import './App.css';
 import React, { useState, useEffect } from 'react';
 import { Fragment } from 'react';
 import { Route, Routes, Navigate, useNavigate } from 'react-router';
-import MainHeader from './components/MainHeader/MainHeader';
 import SoleCatchphrase from './components/SoleCatchphrase';
 import Shoes from './components/Shoes/Shoes';
 import Hero from './components/Hero/Hero';
-import Header from './Header/Header';
+import Header from './components/Header/Header';
 import { fetchShoeData } from './store/shoe-slice';
 import { useSelector, useDispatch } from 'react-redux';
 import NotFound from './pages/NotFound';
@@ -44,6 +43,7 @@ function App() {
         path='/home'
         element={
           <main>
+            <Hero/>
             <SoleCatchphrase/>
             <Shoes/>  
           </main>
@@ -54,16 +54,16 @@ function App() {
         element={ <Navigate replace to="/home" /> }
         />
         <Route
-        path='*'
-        element={<NotFound/>}
-        />
-        <Route
-        path='/shoes'
+        path='/shoes/*'
         element={<Shoes/>}
         />
         <Route
         path='/shoes/:quoteId/'
         element={<ShoeItem/>}
+        />
+        <Route
+        path='*'
+        element={<NotFound/>}
         />
       </Routes>
     </Fragment>

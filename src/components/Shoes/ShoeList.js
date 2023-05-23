@@ -55,7 +55,7 @@ const ShoeList = (props) => {
                     />
                 </div>
                 <Link 
-                to={`/shoes/${id}`}
+                to={`/shoes/${id}/`}
                 className="flex flex-col space-y-2">
                     <div className="overflow-hidden cursor-pointer">
                         <img 

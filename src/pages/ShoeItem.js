@@ -5,6 +5,8 @@ import { fetchShoeItem } from "../store/shoe-slice";
 import { useDispatch } from "react-redux";
 import { apiActions } from "../store/api-slice";
 import LoadingSpinner from "../components/UI/LoadingSpinner/LoadingSpinner";
+import ShoeListItem from "../components/Shoes/ShoeListItem";
+import ShoeList from "../components/Shoes/ShoeList";
 
 const ShoeItem = () => {
     const dispatch =  useDispatch()
@@ -16,10 +18,7 @@ const ShoeItem = () => {
         content = <LoadingSpinner/>
     }
     if (notification === true && !error) {
-        content = 
-        <div className="">
-            HELLO WORLD
-        </div>
+        content = <ShoeListItem/>
     }
     if (error) {
         content = 
@@ -38,7 +37,7 @@ const ShoeItem = () => {
 
     useEffect(() => {
       dispatch(fetchShoeItem(quoteId))
-    }, [dispatch])
+    }, [quoteId,dispatch])
     
 
     return (
