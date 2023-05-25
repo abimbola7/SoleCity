@@ -102,7 +102,7 @@ const MainHeader = () => {
             <header className="h-20 w-100 text-white z-[100] px-3 overflow-hidden">
                 <nav className="container relative flex items-center justify-between h-full mx-auto">
                     <div className="flex items-center space-x-2">
-                        <h1 className="text-2xl md:text-5xl font-semibold tracking-wider text-[#F9BA15]">SoleCity</h1>
+                        <Link to="/home" className="text-2xl md:text-5xl font-semibold tracking-wider text-[#F9BA15]">SoleCity</Link>
                         <sub><img src={shoesIcon} alt="shoe-icon" width={50} height={50} /></sub>
                     </div>
                     <div className="relative hidden lg:block text-[#F9BA15]">
@@ -122,9 +122,11 @@ const MainHeader = () => {
                             <li className="relative overflow-hidden">
                                 <SearchBar/>
                             </li>
-                            <li className="relative">
+                            <Link 
+                            to="/cart"
+                            className="relative">
                                 <CartIcon/>
-                            </li>
+                            </Link>
                         </ul>
                     </div>
                     <Hamburger

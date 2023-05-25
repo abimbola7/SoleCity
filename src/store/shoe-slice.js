@@ -3,7 +3,8 @@ import { apiActions } from "./api-slice";
 
 
 const initialShoeState = {
-    shoe : []
+    shoe : [],
+    shoeItem : {}
 }
 
 const shoeSlice = createSlice({
@@ -22,6 +23,9 @@ const shoeSlice = createSlice({
         replace(state, action){
             state.shoe = action.payload;
             console.log(state);
+        },
+        shoeItem(state, action){
+            state.shoeItem = action.payload
         }
     }
 })
@@ -53,7 +57,7 @@ export const fetchShoeItem = (quoteId) => {
         return async (dispatch) => {
             const fetchData = async () => {
                 dispatch(apiActions.showNotification(false));
-                const response = await fetch(`https://solecity-8f055-default-rtdb.firebaseio.com/shoes/${quoteId}.json`)
+                const response = await fetch(`https://solecity-8f055-default-rtdb.firebaseio.com/shoes/${quoteId-1}.json`)
                 if (!response.ok) {
                     throw new Error("failed to fetch data")
                 } else {
@@ -65,6 +69,7 @@ export const fetchShoeItem = (quoteId) => {
             try{
                 const shoeData = await fetchData();
                 dispatch(apiActions.showNotification(true))
+                dispatch(shoeAction.shoeItem(shoeData))
                 console.log(shoeData);
             } catch(error){
                 console.log(error.message);

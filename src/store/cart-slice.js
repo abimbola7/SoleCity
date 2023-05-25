@@ -4,8 +4,9 @@ import { createSlice } from "@reduxjs/toolkit";
 const cartInitialState = {
     totalQuantity : 0,
     totalFavorites: 0,
+    totalAmount : 0,
     cart : [],
-    heartArray : []
+    heartArray : [],
 }
 
 const cartSlice = createSlice({
@@ -15,11 +16,10 @@ const cartSlice = createSlice({
         addToCart(state, action){
             state.totalQuantity++;
             console.log(action.payload.id);
-            // state.cart.push(action.payload)
             const pickedItem  = state.cart.find(elem=>elem.id === action.payload.id);
             console.log(pickedItem);
             if (pickedItem) {
-                pickedItem.amount++;
+                pickedItem.amount = pickedItem.amount + action.payload.amount;
             } else{
                 state.cart.push(action.payload)
             }

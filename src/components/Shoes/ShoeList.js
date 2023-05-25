@@ -54,22 +54,25 @@ const ShoeList = (props) => {
                     cart={cart}
                     />
                 </div>
-                <Link 
-                to={`/shoes/${id}/`}
-                className="flex flex-col space-y-2">
-                    <div className="overflow-hidden cursor-pointer">
+                <div
+                className="flex flex-col space-y-2 text-white">
+                    <Link 
+                    to={`/shoes/${id}/`}
+                    className="overflow-hidden cursor-pointer">
                         <img 
                         src={image}
                         alt="img" 
                         loading="lazy"
                         className="transform hover:scale-110 transition-all duration-300"/>
-                    </div>
-                    <div className="space-y-1 text-white">
+                    </Link>
+                    <Link
+                    to={`/shoes/${id}/`}
+                    className="space-y-1 text- white">
                         <h1
                         className="uppercase text"
                         >{name}</h1>
                         <p>${price}</p>
-                    </div>
+                    </Link>
                     <CartButton
                     values={{
                         onClick : addToCart,
@@ -79,7 +82,7 @@ const ShoeList = (props) => {
                     >
                         Add To Cart
                     </CartButton>
-                </Link>
+                </div>
             </div>
         </Fragment>
     )

@@ -8,9 +8,8 @@
   src: url("../src/fonts/Raleway-Medium.ttf");
 }
 
-
-
 body {
+  scroll-behavior:smooth;
   margin: 0;
   font-family: 'roboto';
   -webkit-font-smoothing: antialiased;

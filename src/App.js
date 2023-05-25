@@ -11,6 +11,7 @@ import { fetchShoeData } from './store/shoe-slice';
 import { useSelector, useDispatch } from 'react-redux';
 import NotFound from './pages/NotFound';
 import ShoeItem from './pages/ShoeItem';
+import Cart from './components/Cart/Cart';
 
 
 
@@ -60,6 +61,10 @@ function App() {
         <Route
         path='/shoes/:quoteId/'
         element={<ShoeItem/>}
+        />
+        <Route
+        path='/cart'
+        element={<Cart/>}
         />
         <Route
         path='*'

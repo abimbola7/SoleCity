@@ -4,7 +4,7 @@ import { useNavigate } from "react-router";
 const NotFound  = () => {
     const navigate = useNavigate()
     const backToPreviousPage = () => {
-        navigate(-1);
+        navigate("/home");
     };
     return (
         <div className="absolute text-center text-white space-y-5 -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">

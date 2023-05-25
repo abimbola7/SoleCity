@@ -12,13 +12,22 @@ const ShoeItem = () => {
     const dispatch =  useDispatch()
     const { quoteId } = useParams();
     const notification = useSelector(state=>state.api.notification);
+    const item = useSelector(state=>state.shoe.shoeItem);
+    console.log(item);
     const error = useSelector(state=>state.api.error);
     let content;
     if (notification === false) {
         content = <LoadingSpinner/>
     }
     if (notification === true && !error) {
-        content = <ShoeListItem/>
+        content = <ShoeListItem
+        id={item.id}
+        image={item.imageUrl}
+        name={item.name}
+        amount={item.amount}
+        desc={item.description}
+        price={item.price}
+        />
     }
     if (error) {
         content = 
