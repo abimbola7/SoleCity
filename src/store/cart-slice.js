@@ -3,6 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const cartInitialState = {
     totalQuantity : 0,
+    amount : 0,
     totalFavorites: 0,
     totalAmount : 0,
     cart : [],
@@ -14,13 +15,24 @@ const cartSlice = createSlice({
     initialState: cartInitialState,
     reducers : {
         addToCart(state, action){
-            state.totalQuantity++;
             console.log(action.payload.id);
             const pickedItem  = state.cart.find(elem=>elem.id === action.payload.id);
             console.log(pickedItem);
             if (pickedItem) {
                 pickedItem.amount = pickedItem.amount + action.payload.amount;
             } else{
+                state.totalQuantity++
+                state.cart.push(action.payload)
+            }
+        },
+        addToCart1(state, action){
+            console.log(action.payload);
+            const pickedItem  = state.cart.find(elem=>elem.id === action.payload.id);
+            console.log(pickedItem);
+            if (pickedItem) {
+                pickedItem.amount++
+            } else{
+                state.totalQuantity++
                 state.cart.push(action.payload)
             }
         },
@@ -45,6 +57,9 @@ const cartSlice = createSlice({
             // state.heartArray = state.heartArray.find((elem)=>elem.id === action.payload)
             state.heartArray = state.heartArray.filter(elem=>elem.id !== action.payload )
             // console.log(state.heartArray);
+        },
+        assignAmount(state,action){
+            state.amount = action.payload;
         }
     }
 })

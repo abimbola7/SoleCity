@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from "react";
+import React, { useState, useCallback, useRef } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus, faSortAmountDesc } from "@fortawesome/free-solid-svg-icons";
 import { faMinus } from "@fortawesome/free-solid-svg-icons";
@@ -10,19 +10,21 @@ import CartButton from "../UI/CartButton/CartButton";
 
 const c  = console.log.bind(document)
 const ShoeListItem  = (props)=> {
+    const amountRef = useRef();
     const dispatch = useDispatch();
     const cart = useSelector(state=>state.cart.cart);
     let amountFromCart;
     console.log(cart);
     const { id, name, desc, amount, price, image } = props;
     const addToCart = () => {
+        const amount = +amountRef.current.value; 
         const items = {
             id : id,
             name : name,
             description : desc,
             price: price,
             image: image,
-            amount : amountFromCart
+            amount : amount
         }
         dispatch(cartActions.addToCart(items))
         c(items)
@@ -51,7 +53,7 @@ const ShoeListItem  = (props)=> {
                     <p className="text-xl">Price: <span className="text-orangeDark">${ price }</span></p>
                     <div className="flex space-x-3 items-center text-xl">
                         <p>Amount</p>
-                        <AmountBtn amount={amount} cartHandler={cartAdd}/>
+                        <AmountBtn amount={amount} cartHandler={cartAdd} ref={amountRef}/>
                     </div>
                     <CartButton
                         values={{
