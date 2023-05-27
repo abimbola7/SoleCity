@@ -4,6 +4,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { cartActions } from "../../store/cart-slice";
 
 const CartDetails = (props) => {
+    const totalAmount = useSelector(state=>state.cart.totalAmount);
+    console.log(totalAmount);
     const { name, image, amount, price, desc, id} = props;
     const dispatch = useDispatch();
     const amountRef = useRef();
@@ -17,11 +19,16 @@ const CartDetails = (props) => {
                 description : desc,
                 image : image,
                 amount : amount,
-                price : price
+                price : price,
             }
             console.log(amountRef.current);
-            dispatch(cartActions.addToCart1(item, false))
+            dispatch(cartActions.addToCart({items:item, type:"cart"}));
         }
+    const removeFromCart = () => {};
+    const removeCartItem = () => {
+        dispatch(cartActions.removeFromCart({id:id, type:"remove"}))
+    };
+
     return (
         <Fragment>
             <tr className=" dark:bg-gray-800 dark:border-gray-700">
@@ -37,12 +44,15 @@ const CartDetails = (props) => {
                         </div>
                 </th>
                 <td className="px-6 py-4">
-                    <AmountBtn 
-                    // ref={amountRef}
-                    amount={amount} cartHandler={cartAdd} ref={amountRef}/>
+                    <AmountBtn
+                    id={id}
+                    amount={amount} cartHandler={cartAdd} ref={amountRef} cartRemove={removeFromCart}/>
+                    <button 
+                    onClick={removeCartItem}
+                    className="ml-10 hover:underline">Remove</button>
                 </td>
                 <td className="px-6 py-4 text-xl">
-                    <p>${ price * amount }</p>
+                    <p>${ price * amount }  {totalAmount}</p>
                 </td>
             </tr>
         </Fragment>

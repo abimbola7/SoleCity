@@ -25,7 +25,7 @@ const ShoeList = (props) => {
             price : price,
             amount: amount
         }
-        dispatch(cartActions.addToCart(items));
+        dispatch(cartActions.addToCart({items:items, type:"cart"}));
 
         // if (price > 1) {
         //     shoes[id-1].toggleStatus = true;

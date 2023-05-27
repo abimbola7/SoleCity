@@ -15,33 +15,42 @@ const cartSlice = createSlice({
     initialState: cartInitialState,
     reducers : {
         addToCart(state, action){
-            console.log(action.payload.id);
-            const pickedItem  = state.cart.find(elem=>elem.id === action.payload.id);
+            const pickedItem  = state.cart.find(elem=>elem.id === action.payload.items.id);
             console.log(pickedItem);
             if (pickedItem) {
-                pickedItem.amount = pickedItem.amount + action.payload.amount;
+                if (action.payload.type === "shoe"){
+                    pickedItem.amount = pickedItem.amount + action.payload.items.amount;
+                    state.totalAmount = state.totalAmount + action.payload.items.price * action.payload.items.amount
+                } else if (action.payload.type === "cart"){
+                    pickedItem.amount++;
+                    state.totalAmount = state.totalAmount + action.payload.items.price
+                }
             } else{
                 state.totalQuantity++
-                state.cart.push(action.payload)
+                state.cart.push(action.payload.items)
+                state.totalAmount = state.totalAmount + action.payload.items.price * action.payload.items.amount
             }
         },
-        addToCart1(state, action){
-            console.log(action.payload);
-            const pickedItem  = state.cart.find(elem=>elem.id === action.payload.id);
-            console.log(pickedItem);
-            if (pickedItem) {
-                pickedItem.amount++
-            } else{
-                state.totalQuantity++
-                state.cart.push(action.payload)
+
+        removeFromCart(state, action){
+            console.log(action.payload.type);
+            const pickedItem = state.cart.find((elem)=>elem.id === action.payload.id)
+            if (action.payload.type === "cart") {
+                if (pickedItem) {
+                    pickedItem.amount--;
+                    state.totalAmount = state.totalAmount - pickedItem.price;
+                }  
+            } else if (action.payload.type === "remove") {
+                state.cart = state.cart.filter((elem)=>elem.id !== action.payload.id);
+                state.totalAmount = state.totalAmount - pickedItem.price * pickedItem.amount
+                state.totalQuantity--
+
             }
+            return;      
+            
         },
+    
         addToFavorite(state, action){     
-            const favItem = state.cart.find(elem=>elem.id === action.payload.id);
-            // if (favItem) {
-            //     state.totalFavorites--;
-            // } else{
-                console.log(action.payload.id);
                 if (action.payload.heartIsClicked) {
                     state.totalFavorites--
                     state.heartArray = state.heartArray.filter(elem=>elem.id !== action.payload.id);
@@ -49,14 +58,11 @@ const cartSlice = createSlice({
                     state.totalFavorites++
                     state.heartArray.push(action.payload);
                 }
-            // }
         },
         removeFromFav(state, action){
             console.log(action.payload);
             state.totalFavorites--
-            // state.heartArray = state.heartArray.find((elem)=>elem.id === action.payload)
             state.heartArray = state.heartArray.filter(elem=>elem.id !== action.payload )
-            // console.log(state.heartArray);
         },
         assignAmount(state,action){
             state.amount = action.payload;

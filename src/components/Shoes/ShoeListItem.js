@@ -26,17 +26,12 @@ const ShoeListItem  = (props)=> {
             image: image,
             amount : amount
         }
-        dispatch(cartActions.addToCart(items))
+        dispatch(cartActions.addToCart({items:items, type:"shoe"}))
         c(items)
     }
 
     
-    const cartAdd = (amt)=> {
-        // console.log(amt)
-        amountFromCart = amt;
-        console.log(amountFromCart);
-    }
-    console.log(amountFromCart);
+    const cartAdd = (amt)=> {}
 
     return (
         <section

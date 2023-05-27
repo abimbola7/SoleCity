@@ -23,9 +23,10 @@ const SideBar = (props) => {
             />
             <div className="grid grid-rows-5 mt-10 text-white ">
                 {[
-                    ['NEW'],['SHOP'],['CART'],['SHIPPING'],['ACCOUNT'],['ABOUT US']
-                ].map(([title])=>(
+                    ['NEW'],['SHOP'],['CART', '/cart'],['SHIPPING'],['ACCOUNT'],['ABOUT US']
+                ].map(([title, url])=>(
                     <Link 
+                    to={url}
                     className="px-12 py-4 text-lg">{title}</Link>
                 ))}
                 {/* <div className="px-10 py-3 border">{title}</div> */}
