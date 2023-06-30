@@ -27,35 +27,20 @@ const ShoeList = (props) => {
         }
         dispatch(cartActions.addToCart({items:items, type:"cart"}));
 
-        // if (price > 1) {
-        //     shoes[id-1].toggleStatus = true;
-        //     console.log(shoes);
-        // }
     };
     return (
         <Fragment>
             <div className="">
                 <div className="relative z-50">
-                    <Heart
-                    image={image}
-                    name={name}
-                    price={price}
-                    description={desc}
-                    id={id}
-                    shoe={props.shoes}
-                    setShoes={props.setShoes}
-                    heart={heart}
-                    />
-
-                    <CartIcon
-                    id={id}
-                    shoe={props.shoes}
-                    setShoes={props.setShoes}
-                    cart={cart}
+                    <Heart 
+                    image={image} name={name}
+                    price={price} description={desc}
+                    id={id} shoe={props.shoes}
+                    setShoes={props.setShoes} heart={heart}
                     />
                 </div>
                 <div
-                className="flex flex-col space-y-2 text-white">
+                className="flex flex-col text-white">
                     <Link 
                     to={`/shoes/${id}/`}
                     className="overflow-hidden cursor-pointer">
@@ -63,13 +48,13 @@ const ShoeList = (props) => {
                         src={image}
                         alt="img" 
                         loading="lazy"
-                        className="transform hover:scale-110 transition-all duration-300"/>
+                        className="transition-all duration-300 transform hover:scale-110"/>
                     </Link>
                     <Link
                     to={`/shoes/${id}/`}
-                    className="space-y-1 text- white">
+                    className="space-y-1 text-white h-20 py-1">
                         <h1
-                        className="uppercase text"
+                        className="uppercase text-sm"
                         >{name}</h1>
                         <p>${price}</p>
                     </Link>

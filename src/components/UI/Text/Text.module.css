@@ -1,0 +1,17 @@
+.title::before{
+    content: "";
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    position: absolute;
+    width: 40%;
+    height: 0.1px;
+    bottom: -4px;
+    background-color: #f9ba15;
+    transition: all .4s ease-in-out;
+}
+
+.title:hover::before{
+    width: 75%;
+}

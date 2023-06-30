@@ -12,6 +12,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import NotFound from './pages/NotFound';
 import ShoeItem from './pages/ShoeItem';
 import Cart from './components/Cart/Cart';
+import Example from './components/Carousel/Carousel'
 
 
 
@@ -44,8 +45,9 @@ function App() {
         path='/home'
         element={
           <main>
-            <Hero/>
-            <SoleCatchphrase/>
+            {/* <Hero/>
+            <SoleCatchphrase/> */}
+            <Example/>
             <Shoes/>  
           </main>
         }

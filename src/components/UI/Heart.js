@@ -31,7 +31,7 @@ const Heart = (props) => {
         onClick={heartHandler}
         className="absolute cursor-pointer product-img right-4 top-4 focus:outline-none"
         >
-            <i className={`text-3xl hover:scale-110 transition-all duration-150 ${ heart ? 'text-red-500' : 'text-slate-400' } fa-solid fa-heart`}></i>
+            <i className={`text-3xl hover:scale-110 transition-all duration-150 ${ heart ? 'text-red-500' : 'text text-gray-400' } fa-solid fa-heart`}></i>
          </button>
     )
 };

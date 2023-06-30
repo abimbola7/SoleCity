@@ -1,19 +1,19 @@
 import React, { useState, useCallback, useRef } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlus, faSortAmountDesc } from "@fortawesome/free-solid-svg-icons";
-import { faMinus } from "@fortawesome/free-solid-svg-icons";
+import { useParams, Location, useLocation } from "react-router";
 import { useDispatch, useSelector } from "react-redux";
 import { cartActions } from "../../store/cart-slice";
+import Review from "../Reviews/Reviews";
 import AmountBtn from "../UI/AmountBtn/AmountBtn";
 import CartButton from "../UI/CartButton/CartButton";
 
 
 const c  = console.log.bind(document)
 const ShoeListItem  = (props)=> {
+    const location = useLocation()
+    console.log(location);
     const amountRef = useRef();
     const dispatch = useDispatch();
     const cart = useSelector(state=>state.cart.cart);
-    let amountFromCart;
     console.log(cart);
     const { id, name, desc, amount, price, image } = props;
     const addToCart = () => {
@@ -35,7 +35,7 @@ const ShoeListItem  = (props)=> {
 
     return (
         <section
-        className="container mx-auto text-white  transition-all duration-500"
+        className="container mx-auto text-white  transition-all duration-500 space-y-7"
         >
             <h1 className="text-3xl text-center text-orangeDark tracking-widest">SHOE DETAILS</h1>
             <div className="flex flex-col sm:flex-row space-y-6 sm:space-x-6 sm:space-y-0 mt-5">
@@ -61,6 +61,7 @@ const ShoeListItem  = (props)=> {
                     </CartButton>
                 </div>
             </div>
+            <Review/>
         </section>
     )
 }

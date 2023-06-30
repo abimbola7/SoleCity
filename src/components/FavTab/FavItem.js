@@ -26,7 +26,7 @@ const FavItem = (props) => {
             className="flex flex-col justify-center flex-1 space-y-3"
             >
                 <h1
-                className="text-2xl font-semibold uppercase "
+                className="text-lg font-semibold uppercase "
                 >{props.name}</h1>                
                 <p>{props.desc}</p>
                 <p>${props.price}</p>

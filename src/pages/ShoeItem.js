@@ -51,7 +51,9 @@ const ShoeItem = () => {
 
     return (
         <Fragment>
-            { content }
+            <div className="mt-32">
+                { content }
+            </div>
         </Fragment>
     )
 };

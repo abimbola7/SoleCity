@@ -1,6 +1,6 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState } from "react";
 import ReactDOM from "react-dom"
-import { NavLink, Link } from "react-router-dom";
+import { NavLink, Link, useLocation } from "react-router-dom";
 import shoesIcon from "../../images/shoes-19 (1).svg";
 import SearchBar from "../SearchBar/SearchBar";
 import CartIcon from "../Cart/CartIcon";
@@ -17,10 +17,10 @@ import FavShoes from "../FavTab/FavShoes";
 const SideBar = (props) => {
     const hamburgerToggle = useSelector(state=>state.ui.hamburgerIsToggled);
     return (
-        <div className={`fixed ${hamburgerToggle ? 'translate-x-0' : 'translate-x-[25rem]' } right-0 z-[10000] h-screen w-[25rem] bg-[#161717] transform duration-500`}>
-            <Hamburger
-            className="text-right absolute top-3 left-[20.5rem]"
-            />
+        <div className={`fixed ${hamburgerToggle ? 'translate-x-0' : 'translate-x-[20rem]' } right-0 z-[1000000] h-screen w-[20rem] bg-[#161717] transform duration-500 top-0`}>
+                <Hamburger
+                className="text-right absolute top-6 left-[17.5rem]"
+                />
             <div className="grid grid-rows-5 mt-10 text-white ">
                 {[
                     ['NEW'],['SHOP'],['CART', '/cart'],['SHIPPING'],['ACCOUNT'],['ABOUT US']
@@ -76,8 +76,15 @@ const Favorites = () => {
 }
 
 const MainHeader = () => {
+    const location = useLocation();
     const favAmount = useSelector(state=>state.cart.totalFavorites);
+    const [ header, setHeader] = useState("black")
     const dispatch = useDispatch();
+    const scrollHandler = () => {
+        window.scrollY > 620 ? setHeader("white") : setHeader("black")
+    }
+
+    window.addEventListener("scroll", scrollHandler)
     return (
         <Fragment>
             {
@@ -100,7 +107,7 @@ const MainHeader = () => {
                 )
             }
 
-            <header className="h-20 w-100 text-white z-[100] px-3 overflow-hidden">
+            <header className={`h-20 w-full text-white z-[1000] px-3 overflow-hidden fixed top-0 ${location.pathname === '/home' ? (header === "white" ? ' bg-white' : '') : 'bg-[#0F1110]' }  transition duration-500`}>
                 <nav className="container relative flex items-center justify-between h-full mx-auto">
                     <div className="flex items-center space-x-2">
                         <Link to="/home" className="text-2xl md:text-5xl font-semibold tracking-wider text-[#F9BA15]">SoleCity</Link>

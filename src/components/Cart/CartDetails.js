@@ -1,7 +1,9 @@
 import React, { Fragment, useCallback, useRef } from "react"
 import AmountBtn from "../UI/AmountBtn/AmountBtn"
 import { useDispatch, useSelector } from "react-redux";
+import  { Link } from "react-router-dom";
 import { cartActions } from "../../store/cart-slice";
+import Card from "../UI/Card";
 
 const CartDetails = (props) => {
     const totalAmount = useSelector(state=>state.cart.totalAmount);
@@ -33,26 +35,27 @@ const CartDetails = (props) => {
         <Fragment>
             <tr className=" dark:bg-gray-800 dark:border-gray-700">
                 <th className="px-6 py-4 font-medium whitespace-nowrap dark:text-white relative flex flex-row h-40 gap-x-5">
-                    <img src={image} alt="" width={120}/>
-                        <div className="flex flex-col justify-center flex-1 space-y-3">
-                            <h1
-                                className="text-2xl font-semibold uppercase "
+                    <img src={image} alt="" width={50}/>
+                        <div className="flex flex-col justify-center flex-1 space-y-3 whitespace-normal h-fit">
+                            <Link
+                            to={`/shoes/${id}`}
+                                className="text-lg font-semibold uppercase tracking-wider"
                                 >{name}
-                            </h1>                
+                            </Link>                
                                 <p>{desc}</p>
                                 <p className="text-lg">${price}</p>
                         </div>
                 </th>
-                <td className="px-6 py-4">
+                <td className="">
                     <AmountBtn
                     id={id}
                     amount={amount} cartHandler={cartAdd} ref={amountRef} cartRemove={removeFromCart}/>
                     <button 
                     onClick={removeCartItem}
-                    className="ml-10 hover:underline">Remove</button>
+                    className="ml-10 hover:underline focus:outline-none mt-1">Remove</button>
                 </td>
                 <td className="px-6 py-4 text-xl">
-                    <p>${ price * amount }  {totalAmount}</p>
+                    <p>${ price * amount }</p>
                 </td>
             </tr>
         </Fragment>
