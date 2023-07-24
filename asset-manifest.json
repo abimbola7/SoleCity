@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/home/static/css/main.934678f2.css",
-    "main.js": "/home/static/js/main.6b1f98d0.js",
-    "static/js/787.e5e3c057.chunk.js": "/home/static/js/787.e5e3c057.chunk.js",
-    "static/media/p10.webp": "/home/static/media/p10.a1735b189d57902342c8.webp",
-    "static/media/Raleway-Medium.ttf": "/home/static/media/Raleway-Medium.10498e1dc3ccaf664c71.ttf",
-    "static/media/2.jpg": "/home/static/media/2.a88b8011a70b2a23d7e8.jpg",
-    "static/media/heart-svgrepo-com2.png": "/home/static/media/heart-svgrepo-com2.17544992e5774bd86e39.png",
-    "static/media/logo.svg": "/home/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
-    "static/media/shoes-19 (1).svg": "/home/static/media/shoes-19 (1).e07179f91a75fa84bc4ff60845e2e2cf.svg",
-    "index.html": "/home/index.html",
-    "main.934678f2.css.map": "/home/static/css/main.934678f2.css.map",
-    "main.6b1f98d0.js.map": "/home/static/js/main.6b1f98d0.js.map",
-    "787.e5e3c057.chunk.js.map": "/home/static/js/787.e5e3c057.chunk.js.map"
+    "main.css": "/SoleCity/static/css/main.1adfca51.css",
+    "main.js": "/SoleCity/static/js/main.68af919f.js",
+    "static/js/787.e5e3c057.chunk.js": "/SoleCity/static/js/787.e5e3c057.chunk.js",
+    "static/media/p10.webp": "/SoleCity/static/media/p10.a1735b189d57902342c8.webp",
+    "static/media/Raleway-Medium.ttf": "/SoleCity/static/media/Raleway-Medium.10498e1dc3ccaf664c71.ttf",
+    "static/media/2.jpg": "/SoleCity/static/media/2.a88b8011a70b2a23d7e8.jpg",
+    "static/media/heart-svgrepo-com2.png": "/SoleCity/static/media/heart-svgrepo-com2.17544992e5774bd86e39.png",
+    "static/media/logo.svg": "/SoleCity/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "static/media/shoes-19 (1).svg": "/SoleCity/static/media/shoes-19 (1).e07179f91a75fa84bc4ff60845e2e2cf.svg",
+    "index.html": "/SoleCity/index.html",
+    "main.1adfca51.css.map": "/SoleCity/static/css/main.1adfca51.css.map",
+    "main.68af919f.js.map": "/SoleCity/static/js/main.68af919f.js.map",
+    "787.e5e3c057.chunk.js.map": "/SoleCity/static/js/787.e5e3c057.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.934678f2.css",
-    "static/js/main.6b1f98d0.js"
+    "static/css/main.1adfca51.css",
+    "static/js/main.68af919f.js"
   ]
 }
