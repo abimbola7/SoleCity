@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/react-gh-pages/static/css/main.5ffd7adb.css",
+    "main.js": "/react-gh-pages/static/js/main.339513f2.js",
+    "static/js/787.e5e3c057.chunk.js": "/react-gh-pages/static/js/787.e5e3c057.chunk.js",
+    "static/media/p10.webp": "/react-gh-pages/static/media/p10.a1735b189d57902342c8.webp",
+    "static/media/Raleway-Medium.ttf": "/react-gh-pages/static/media/Raleway-Medium.10498e1dc3ccaf664c71.ttf",
+    "static/media/2.jpg": "/react-gh-pages/static/media/2.a88b8011a70b2a23d7e8.jpg",
+    "static/media/1.webp": "/react-gh-pages/static/media/1.a891d3cb8b2dd86b8ee1.webp",
+    "static/media/heart-svgrepo-com2.png": "/react-gh-pages/static/media/heart-svgrepo-com2.17544992e5774bd86e39.png",
+    "static/media/logo.svg": "/react-gh-pages/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "static/media/shoes-19 (1).svg": "/react-gh-pages/static/media/shoes-19 (1).e07179f91a75fa84bc4ff60845e2e2cf.svg",
+    "index.html": "/react-gh-pages/index.html",
+    "main.5ffd7adb.css.map": "/react-gh-pages/static/css/main.5ffd7adb.css.map",
+    "main.339513f2.js.map": "/react-gh-pages/static/js/main.339513f2.js.map",
+    "787.e5e3c057.chunk.js.map": "/react-gh-pages/static/js/787.e5e3c057.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5ffd7adb.css",
+    "static/js/main.339513f2.js"
+  ]
+}
