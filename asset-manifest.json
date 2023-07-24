@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/SoleCity/static/css/main.1adfca51.css",
-    "main.js": "/SoleCity/static/js/main.c1ce64a6.js",
+    "main.js": "/SoleCity/static/js/main.bd1d1079.js",
     "static/js/787.e5e3c057.chunk.js": "/SoleCity/static/js/787.e5e3c057.chunk.js",
     "static/media/p10.webp": "/SoleCity/static/media/p10.a1735b189d57902342c8.webp",
     "static/media/Raleway-Medium.ttf": "/SoleCity/static/media/Raleway-Medium.10498e1dc3ccaf664c71.ttf",
@@ -11,11 +11,11 @@
     "static/media/shoes-19 (1).svg": "/SoleCity/static/media/shoes-19 (1).e07179f91a75fa84bc4ff60845e2e2cf.svg",
     "index.html": "/SoleCity/index.html",
     "main.1adfca51.css.map": "/SoleCity/static/css/main.1adfca51.css.map",
-    "main.c1ce64a6.js.map": "/SoleCity/static/js/main.c1ce64a6.js.map",
+    "main.bd1d1079.js.map": "/SoleCity/static/js/main.bd1d1079.js.map",
     "787.e5e3c057.chunk.js.map": "/SoleCity/static/js/787.e5e3c057.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.1adfca51.css",
-    "static/js/main.c1ce64a6.js"
+    "static/js/main.bd1d1079.js"
   ]
 }
