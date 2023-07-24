@@ -2,7 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import React, { useState, useEffect } from 'react';
 import { Fragment } from 'react';
-import { Route, Routes, Navigate, useNavigate } from 'react-router';
+import { BrowserRouter as Route, Routes, Navigate, useNavigate } from 'react-router';
 import SoleCatchphrase from './components/SoleCatchphrase';
 import Shoes from './components/Shoes/Shoes';
 import Hero from './components/Hero/Hero';
