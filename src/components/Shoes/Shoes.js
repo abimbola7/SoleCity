@@ -14,7 +14,7 @@ const c = console.log.bind(document);
 const sortList = (items, isSorting) => {
     items.sort((a,b)=>{
         
-        // console.log(isSorting);
+        // sortconsole.log(isSorting);
         if (isSorting) {
             return a.price - b.price;
             // return a.name > b.name ? 1 : -1;

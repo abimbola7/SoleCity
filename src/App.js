@@ -42,7 +42,7 @@ function App() {
       <Header/>
       <Routes>
         <Route
-        path='/home'
+        path='/SoleCity'
         element={
           <main>
             {/* <Hero/>
@@ -54,7 +54,7 @@ function App() {
         />
         <Route
         path='/'
-        element={ <Navigate replace to="/home" /> }
+        element={ <Navigate replace to="/SoleCity" /> }
         />
         <Route
         path='/shoes/*'

@@ -77,6 +77,7 @@ const Favorites = () => {
 
 const MainHeader = () => {
     const location = useLocation();
+    console.log(location.pathname)
     const favAmount = useSelector(state=>state.cart.totalFavorites);
     const [ header, setHeader] = useState("black")
     const dispatch = useDispatch();
@@ -107,16 +108,16 @@ const MainHeader = () => {
                 )
             }
 
-            <header className={`h-20 w-full text-white z-[1000] px-3 overflow-hidden fixed top-0 ${location.pathname === '/home' ? (header === "white" ? ' bg-white' : '') : 'bg-[#0F1110]' }  transition duration-500`}>
+            <header className={`h-20 w-full text-white z-[1000] px-3 overflow-hidden fixed top-0 ${location.pathname === '/SoleCity/' ? (header === "white" ? ' bg-white' : '') : 'bg-[#0F1110]' }  transition duration-500`}>
                 <nav className="container relative flex items-center justify-between h-full mx-auto">
                     <div className="flex items-center space-x-2">
-                        <Link to="/home" className="text-2xl md:text-5xl font-semibold tracking-wider text-[#F9BA15]">SoleCity</Link>
+                        <Link to="/SoleCity" className="text-2xl md:text-5xl font-semibold tracking-wider text-[#F9BA15]">SoleCity</Link>
                         <sub><img src={shoesIcon} alt="shoe-icon" width={50} height={50} /></sub>
                     </div>
                     <div className="relative hidden lg:block text-[#F9BA15]">
                         <ul className="flex items-center space-x-6 text-2xl font-semibold">
                             <Link
-                            to="/home"
+                            to="/SoleCity"
                             >HOME</Link>
                             <li
                             className="relative cursor-pointer"
